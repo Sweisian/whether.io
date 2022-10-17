@@ -1,7 +1,19 @@
+.backdrop {
+  position: absolute;
+  background-image: linear-gradient(to right bottom, $color-primary, $color-primary-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%
+}
+
 .app{
   display: grid;
   grid-template-rows: 10rem min-content [main-start] 70vh [main-end];
   grid-template-columns: [full-start] 8rem [center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 8rem [full-end];
+  background-color: $color-white;
+  
+  margin: 2rem;
+  border-radius: 2rem
 }
 
 .app__days{

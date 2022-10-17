@@ -1,28 +1,58 @@
 import { ResponsiveLine } from "@nivo/line";
 
-const WeatherChart = ({ weatherData /* see data tab */ }) => {
+const WeatherChart = ({ weatherData, timeOfDay }) => {
+  const relevantHours = weatherData.days[0].hours.filter((hour) => {
+    const hourAsInt = parseInt(hour.datetime.slice(0, -6));
+
+    return hourAsInt >= timeOfDay.start && hourAsInt <= timeOfDay.end
+      
+  });
+
+
+
   const tempData = {
     id: "Temperature",
-    color: "#D65A59",
-    data: weatherData.days[0].hours.map((hour) => {
+    color: "hsl(0, 60%, 59%)",
+    data: relevantHours.map((hour) => {
       return {
         x: hour.datetime.slice(0, -3),
-        y: hour.temp
+        y: hour.temp,
       };
     }),
   };
 
+  const rainData = {
+    id: "Percip Prob",
+    color: "hsl(201, 64%, 49%)",
+    data: relevantHours.map((hour) => {
+        return {
+          x: hour.datetime.slice(0, -3),
+          y: Math.round(hour.precipprob),
+        };
+    }),
+  };
+
+  const windData = {
+    id: "Windspeed",
+    color: "#2D93CB",
+    data: relevantHours.map((hour) => {
+      return {
+        x: hour.datetime.slice(0, -3),
+        y: Math.round(hour.windspeed),
+      };
+    }),
+  };
 
   return (
     <ResponsiveLine
-      data={[tempData]}
-      margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+      data={[tempData, rainData, windData]}
+      margin={{ top: 50, right: 110, bottom: 160, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
         min: "auto",
         max: "auto",
-        stacked: true,
+        stacked: false,
         reverse: false,
       }}
       yFormat=" >-.2f"
@@ -32,9 +62,9 @@ const WeatherChart = ({ weatherData /* see data tab */ }) => {
         orient: "bottom",
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: 0,
-        legend: "transportation",
-        legendOffset: 36,
+        tickRotation: 60,
+        legend: timeOfDay.humanFriendly,
+        legendOffset: 50,
         legendPosition: "middle",
       }}
       axisLeft={{
@@ -42,7 +72,6 @@ const WeatherChart = ({ weatherData /* see data tab */ }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count",
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -82,5 +111,4 @@ const WeatherChart = ({ weatherData /* see data tab */ }) => {
   );
 };
 
-
-export default WeatherChart
+export default WeatherChart;

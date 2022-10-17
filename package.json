@@ -12,6 +12,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.5.0",
     "sass": "^1.55.0",
+    "use-http": "^1.0.27",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

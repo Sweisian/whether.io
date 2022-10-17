@@ -22,13 +22,16 @@ export default function TimeSelector({ setTimeOfDay }) {
   ];
 
   return (
-    <Select
-      onChange={(selectedOption) => {
-        setTimeOfDay(selectedOption.value);
-      }}
-      options={options.map((op) => {
-        return { value: op, label: op.humanFriendly };
-      })}
-    ></Select>
+    <div className="command-bar__selector">
+      <label>Time of Day</label>
+      <Select
+        onChange={(selectedOption) => {
+          setTimeOfDay(selectedOption.value);
+        }}
+        options={options.map((op) => {
+          return { value: op, label: op.humanFriendly };
+        })}
+      ></Select>
+    </div>
   );
 }

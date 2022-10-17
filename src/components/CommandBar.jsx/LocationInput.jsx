@@ -6,7 +6,6 @@ export default function LocationInput({ setLocation, location }) {
   const [localLocation, setLocalLocation] = useState(location);
 
   const onChangeHandler = (value) => {
-    console.log("DEBOUNCING");
     setLocation(value);
   };
 
@@ -16,6 +15,7 @@ export default function LocationInput({ setLocation, location }) {
 
   return (
     <input
+    className="command-bar__location"
       value={localLocation}
       onChange={(event) => {
         setLocalLocation(event.target.value);
