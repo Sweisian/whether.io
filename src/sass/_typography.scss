@@ -23,15 +23,15 @@ body {
   color: $color-black;
   font-weight: 300;
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 
 }
 
 .small {
   @extend %heading;
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: $color-black;
-  line-height: .6;
+  line-height: 1;
 }
 
 .btn {
@@ -51,7 +51,27 @@ body {
   }
 }
 
+.icon-sm {
+  height: 1.7rem;
+  width: 1.7rem;
+}
+
+.icon-md {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 .mb-sm { margin-bottom: 2rem; }
 .mb-md { margin-bottom: 3rem; }
 .mb-lg { margin-bottom: 4rem; }
 .mb-hg { margin-bottom: 8rem; }
+
+.mr-auto {margin-right: auto}
+.mr-sm {margin-right: .3rem}
+.mr-md {margin-right: 2rem}
+
+.vert-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

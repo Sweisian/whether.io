@@ -59,13 +59,15 @@ export default function DayInfo({ day, timeOfDay, location, weekCount }) {
 
   const dayDateTime = new Date(shiftedDay);
 
+
+
   return (
     <div className={"day__container"}>
       <h1>
         {weekday[dayDateTime.getDay()]} the{" "}
         {dayDateTime.getDate().toString() + nth(dayDateTime.getDate())}
       </h1>
-      {weatherData ? (
+      {weatherData && !error ? (
         <>
           <WeatherText
             day={day}

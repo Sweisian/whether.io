@@ -7,7 +7,7 @@ import Ribbon from "./components/Ribbon/Ribbon";
 function App() {
   const [day, setDay] = useState(Date.now());
 
-  const [weekCount, setWeekCount] = useState(0)
+  const [weekCount, setWeekCount] = useState(3);
 
   const [timeOfDay, setTimeOfDay] = useState({
     humanFriendly: "Afternoon",
@@ -16,6 +16,19 @@ function App() {
   });
 
   const [location, setLocation] = useState("New York");
+
+  const infos = [];
+  for (let i = 0; i < weekCount; i++) {
+    infos.push(
+      <DayInfo
+        key={i}
+        location={location}
+        day={day}
+        timeOfDay={timeOfDay}
+        weekCount={i}
+      />
+    );
+  }
 
   return (
     <div className="backdrop">
@@ -27,12 +40,10 @@ function App() {
             setLocation={setLocation}
             setDay={setDay}
             setTimeOfDay={setTimeOfDay}
+            setWeekCount={setWeekCount}
           />
         </div>
-        <div className="app__days">
-          <DayInfo location={location} day={day} timeOfDay={timeOfDay} weekCount={0}/>
-          <DayInfo location={location} day={day} timeOfDay={timeOfDay} weekCount={1}/>
-        </div>
+        <div className="app__days">{infos}</div>
       </div>
     </div>
   );

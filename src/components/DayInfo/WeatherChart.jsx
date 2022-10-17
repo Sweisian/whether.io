@@ -1,12 +1,17 @@
 import { ResponsiveLine } from "@nivo/line";
 
 const WeatherChart = ({ weatherData, timeOfDay }) => {
-  const relevantHours = weatherData.days[0].hours.filter((hour) => {
-    const hourAsInt = parseInt(hour.datetime.slice(0, -6));
 
-    return hourAsInt >= timeOfDay.start && hourAsInt <= timeOfDay.end
-      
-  });
+  const hours = weatherData.days[0]?.hours
+
+  let relevantHours = []
+
+  if (hours){
+    relevantHours = hours.filter((hour) => {
+      const hourAsInt = parseInt(hour.datetime.slice(0, -6));
+      return hourAsInt >= timeOfDay.start && hourAsInt <= timeOfDay.end
+    });
+  }
 
 
 
@@ -46,7 +51,7 @@ const WeatherChart = ({ weatherData, timeOfDay }) => {
   return (
     <ResponsiveLine
       data={[tempData, rainData, windData]}
-      margin={{ top: 50, right: 110, bottom: 160, left: 60 }}
+      margin={{ top: 50, right: 110, bottom: 200, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",

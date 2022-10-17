@@ -5,9 +5,25 @@
   justify-content: flex-start;
 
   min-width: 50rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    max-height: 50rem;
+    min-height: 20rem;
+  }
 }
 
-.weatherText__container {
- display: flex;
- flex-direction: row;
+.weatherText {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  &__small-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+  }
+
 }

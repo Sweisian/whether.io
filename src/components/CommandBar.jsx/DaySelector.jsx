@@ -45,6 +45,8 @@ export default function DaySelector({ setDay }) {
   return (
     <div className="command-bar__selector">
       <label>Day of week</label>
+
+      
       <Select
         onChange={(selectedOption) => {
           setDay(getNextDayOfWeek(selectedOption.value.day));

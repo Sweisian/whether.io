@@ -1,30 +1,51 @@
 .backdrop {
   position: absolute;
-  background-image: linear-gradient(to right bottom, $color-primary, $color-primary-light);
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-light
+  );
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.app{
+.app {
   display: grid;
-  grid-template-rows: 10rem min-content [main-start] 70vh [main-end];
-  grid-template-columns: [full-start] 8rem [center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 8rem [full-end];
+  grid-template-rows: 5rem min-content [main-start] 70vh [main-end];
+  grid-template-columns:
+    [full-start] 8rem [center-start] repeat(
+      12,
+      [col-start] 1fr [col-end]
+    )
+    [center-end] 8rem [full-end];
   background-color: $color-white;
-  
+
   margin: 2rem;
-  border-radius: 2rem
+  border-radius: 2rem;
+
+  width: 90%;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: max-content max-content [main-start] max-content [main-end];
+  }
 }
 
-.app__days{
+.app__days {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   grid-column: center-start / center-end;
-  grid-row: main-start / main-end;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .app_command-bar {
   grid-column: center-start / center-end;
-  grid-row: 2 / 3;
 }
