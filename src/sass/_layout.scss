@@ -1,0 +1,18 @@
+.app{
+  display: grid;
+  grid-template-rows: 10rem min-content [main-start] 70vh [main-end];
+  grid-template-columns: [full-start] 8rem [center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 8rem [full-end];
+}
+
+.app__days{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-column: center-start / center-end;
+  grid-row: main-start / main-end;
+}
+
+.app_command-bar {
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+}

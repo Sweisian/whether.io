@@ -1,0 +1,193 @@
+const weatherData = {
+ "queryCost": 1,
+ "latitude": 40.7146,
+ "longitude": -74.0071,
+ "resolvedAddress": "New York, NY, United States",
+ "address": "new york",
+ "timezone": "America/New_York",
+ "tzoffset": -4,
+ "description": "Similar temperatures continuing with no rain expected.",
+ "days": [
+  {
+   "datetime": "2022-10-15",
+   "datetimeEpoch": 1665806400,
+   "tempmax": 68.4,
+   "tempmin": 50.3,
+   "temp": 58.7,
+   "feelslikemax": 68.4,
+   "feelslikemin": 50.3,
+   "feelslike": 58.7,
+   "dew": 45.9,
+   "humidity": 64.7,
+   "precip": 0,
+   "precipprob": 0,
+   "precipcover": 0,
+   "preciptype": [
+    "rain"
+   ],
+   "snow": 0,
+   "snowdepth": 0,
+   "windgust": 23,
+   "windspeed": 12.8,
+   "winddir": 164.4,
+   "pressure": 1016.2,
+   "cloudcover": 6.8,
+   "visibility": 12.6,
+   "solarradiation": 142.1,
+   "solarenergy": 12.3,
+   "uvindex": 5,
+   "severerisk": 10,
+   "sunrise": "07:07:12",
+   "sunriseEpoch": 1665832032,
+   "sunset": "18:15:45",
+   "sunsetEpoch": 1665872145,
+   "moonphase": 0.65,
+   "conditions": "Clear",
+   "description": "Clear conditions throughout the day.",
+   "icon": "clear-day",
+   "stations": [
+    "KTEB",
+    "KEWR",
+    "KJFK",
+    "KLGA",
+    "F8726",
+    "KNYC"
+   ],
+   "source": "comb",
+   "hours": [
+    {
+     "datetime": "12:00:00",
+     "datetimeEpoch": 1665849600,
+     "temp": 65.7,
+     "feelslike": 65.7,
+     "humidity": 45.32,
+     "dew": 44,
+     "precip": 0,
+     "precipprob": 0,
+     "snow": 0,
+     "snowdepth": 0,
+     "preciptype": null,
+     "windgust": 12.3,
+     "windspeed": 5.8,
+     "winddir": 164,
+     "pressure": 1016.8,
+     "visibility": 9.9,
+     "cloudcover": 9.3,
+     "solarradiation": 507,
+     "solarenergy": 1.8,
+     "uvindex": 5,
+     "severerisk": 10,
+     "conditions": "Clear",
+     "icon": "clear-day",
+     "stations": [
+      "KTEB",
+      "KEWR",
+      "KJFK",
+      "KLGA",
+      "F8726",
+      "KNYC"
+     ],
+     "source": "obs"
+    },
+    {
+     "datetime": "13:00:00",
+     "datetimeEpoch": 1665853200,
+     "temp": 67.3,
+     "feelslike": 67.3,
+     "humidity": 38.73,
+     "dew": 41.3,
+     "precip": 0,
+     "precipprob": 0,
+     "snow": 0,
+     "snowdepth": 0,
+     "preciptype": null,
+     "windgust": 18.3,
+     "windspeed": 11.3,
+     "winddir": 180,
+     "pressure": 1015.7,
+     "visibility": 9.9,
+     "cloudcover": 9.3,
+     "solarradiation": 549,
+     "solarenergy": 2,
+     "uvindex": 5,
+     "severerisk": 10,
+     "conditions": "Clear",
+     "icon": "clear-day",
+     "stations": [
+      "KTEB",
+      "KEWR",
+      "KJFK",
+      "KLGA",
+      "F8726",
+      "KNYC"
+     ],
+     "source": "obs"
+    }
+   ]
+  }
+ ],
+ "stations": {
+  "KTEB": {
+   "distance": 15718,
+   "latitude": 40.85,
+   "longitude": -74.06,
+   "useCount": 0,
+   "id": "KTEB",
+   "name": "KTEB",
+   "quality": 100,
+   "contribution": 0
+  },
+  "KEWR": {
+   "distance": 13842,
+   "latitude": 40.7,
+   "longitude": -74.17,
+   "useCount": 0,
+   "id": "KEWR",
+   "name": "KEWR",
+   "quality": 100,
+   "contribution": 0
+  },
+  "KJFK": {
+   "distance": 20476,
+   "latitude": 40.65,
+   "longitude": -73.78,
+   "useCount": 0,
+   "id": "KJFK",
+   "name": "KJFK",
+   "quality": 100,
+   "contribution": 0
+  },
+  "KLGA": {
+   "distance": 10937,
+   "latitude": 40.77,
+   "longitude": -73.9,
+   "useCount": 0,
+   "id": "KLGA",
+   "name": "KLGA",
+   "quality": 100,
+   "contribution": 0
+  },
+  "F8726": {
+   "distance": 5313,
+   "latitude": 40.671,
+   "longitude": -73.981,
+   "useCount": 0,
+   "id": "F8726",
+   "name": "FW8726 Brooklyn NY US",
+   "quality": 0,
+   "contribution": 0
+  },
+  "KNYC": {
+   "distance": 6577,
+   "latitude": 40.77,
+   "longitude": -73.98,
+   "useCount": 0,
+   "id": "KNYC",
+   "name": "KNYC",
+   "quality": 100,
+   "contribution": 0
+  }
+ }
+}
+
+export default weatherData
